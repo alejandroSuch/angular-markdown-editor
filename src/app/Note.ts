@@ -9,6 +9,13 @@ export class Note {
     this.value = value;
   }
 
+  clone(): Note {
+    return Note.builder()
+      .id(this.id)
+      .value(this.value)
+      .build();
+  }
+
   static builder() {
     return new NoteBuilder();
   }
@@ -27,6 +34,9 @@ export class NoteBuilder {
 
   constructor() {
     this._id = v4();
+    this._value = `# New note
+    
+  this is a new note`;
   }
 
   public id(id: string): NoteBuilder {

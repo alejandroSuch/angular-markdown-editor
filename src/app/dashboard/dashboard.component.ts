@@ -1,47 +1,29 @@
-import { Note } from './Note';
-import { Component, OnInit } from '@angular/core';
+import { Note } from '../Note';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'kd-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
-  note: Note;
-  text: string = `
-## Welcome to the Markdown Editor
+export class DashboardComponent implements OnChanges {
+  @Input() note: Note;
+  @Output() onNoteChanged: EventEmitter<Note> = new EventEmitter<Note>();
 
-Made with Angular & Material Design
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['note'] && changes['note'].currentValue) {
+      const currentValue: Note = changes['note'].currentValue;
 
-regards,  Alex
-
-
-  `;
-
-  ngOnInit() {
-    const storedValue = localStorage.getItem('note');
-
-    try {
-      const jsonNote = JSON.parse(storedValue);
-      const builder = Note.builder().value(jsonNote.value);
-
-      if (jsonNote.id) {
-        builder.id(jsonNote.id);
-      }
-      this.note = builder.build();
-
-      console.log('note is', this.note);
-    } catch (e) {
-      this.note = Note.builder()
-        .value(`${storedValue}`)
-        .build();
+      this.note = currentValue.clone();
     }
   }
 
   noteChanged(value) {
-    console.log('got', value);
-    console.log('saving', value);
-    this.note.value = value;
-    localStorage.setItem('note', this.note.toString());
+    this.note = Note.builder()
+      .id(this.note.id)
+      .value(value)
+      .build();
+
+    this.onNoteChanged.emit(this.note);
   }
 }

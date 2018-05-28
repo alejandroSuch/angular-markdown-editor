@@ -1,4 +1,4 @@
-import { Note } from './../Note';
+import { Note } from '../../Note';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -16,7 +16,6 @@ export class EditorComponent implements OnInit {
   ngOnInit() {}
 
   noteChanged(value) {
-    console.log('emitting', value);
     this.onNoteChanged.emit(value);
   }
 }

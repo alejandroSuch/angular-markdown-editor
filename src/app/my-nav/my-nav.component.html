@@ -1,10 +1,14 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" role="dialog" mode="over">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary">
+      <span>Menu</span>
+      <span class="spacer"></span>
+      <button mat-icon-button>
+        <mat-icon aria-label="Add note" (click)="addNote()">add_circle_outline</mat-icon>
+      </button>
+    </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="#" *ngFor="let note of notes; let i = index" (click)="selectNote(note)">Nota {{ i + 1 }}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
