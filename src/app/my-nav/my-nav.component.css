@@ -24,3 +24,8 @@ a.mat-list-item {
 a.mat-list-item span.title {
   flex: 1;
 }
+
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+}

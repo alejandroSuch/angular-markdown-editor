@@ -22,6 +22,16 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Angular Markdown Editor</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="toggleMode('both')">
+        <mat-icon>chrome_reader_mode</mat-icon>
+      </button>
+      <button mat-icon-button (click)="toggleMode('editor')">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="toggleMode('preview')">
+        <mat-icon>remove_red_eye</mat-icon>
+      </button>
     </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>

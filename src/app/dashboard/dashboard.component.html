@@ -1,9 +1,9 @@
 <div class="grid-container">
-  <mat-grid-list cols="2">
-    <mat-grid-tile colspan="1" rowspan="1">
+  <mat-grid-list [cols]="columns">
+    <mat-grid-tile colspan="1" rowspan="1" *ngIf="showEditor">
       <kd-editor [note]="note" (onNoteChanged)="noteChanged($event)"></kd-editor>
     </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="1">
+    <mat-grid-tile colspan="1" rowspan="1" *ngIf="showPreview">
       <kd-preview [note]="note"></kd-preview>
     </mat-grid-tile>
   </mat-grid-list>

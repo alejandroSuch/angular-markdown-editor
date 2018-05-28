@@ -14,6 +14,7 @@ import { map } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   notes: Note[];
   note: Note;
+  mode: string;
 
   constructor(private notesService: NotesService, private dialog: MatDialog) {}
 
@@ -53,6 +54,10 @@ export class AppComponent implements OnInit {
         })
       )
       .subscribe();
+  }
+
+  toggleMode(mode) {
+    this.mode = mode;
   }
 
   private getAllNotes() {

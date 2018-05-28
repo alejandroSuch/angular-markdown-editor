@@ -8,13 +8,39 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, EventEmitter, Outpu
 })
 export class DashboardComponent implements OnChanges {
   @Input() note: Note;
+  @Input() mode: string;
   @Output() onNoteChanged: EventEmitter<Note> = new EventEmitter<Note>();
+
+  columns: number = 2;
+  showEditor: boolean = true;
+  showPreview: boolean = true;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['note'] && changes['note'].currentValue) {
       const currentValue: Note = changes['note'].currentValue;
 
       this.note = currentValue.clone();
+    }
+
+    if (changes['mode'] && changes['mode'].currentValue) {
+      const mode = changes['mode'].currentValue;
+      switch (mode) {
+        case 'editor':
+          this.columns = 1;
+          this.showEditor = true;
+          this.showPreview = false;
+          break;
+        case 'preview':
+          this.columns = 1;
+          this.showEditor = false;
+          this.showPreview = true;
+          break;
+        default:
+          this.columns = 2;
+          this.showEditor = true;
+          this.showPreview = true;
+          break;
+      }
     }
   }
 
