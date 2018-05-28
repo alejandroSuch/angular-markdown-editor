@@ -1,6 +1,10 @@
+import { ConfirmDeleteNoteComponent } from './confirm-delete-note/confirm-delete-note.component';
+import { MatDialogRef, MatDialog } from '@angular/material';
 import { NotesService } from './Notes.service';
 import { Component, OnInit } from '@angular/core';
 import { Note } from './Note';
+
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'md-root',
@@ -11,7 +15,7 @@ export class AppComponent implements OnInit {
   notes: Note[];
   note: Note;
 
-  constructor(private notesService: NotesService) {}
+  constructor(private notesService: NotesService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.getAllNotes();
@@ -30,6 +34,25 @@ export class AppComponent implements OnInit {
 
   updateNote(note: Note) {
     this.notesService.save(note);
+  }
+
+  deleteNote(note: Note) {
+    const ref: MatDialogRef<ConfirmDeleteNoteComponent> = this.dialog.open(ConfirmDeleteNoteComponent);
+
+    ref
+      .afterClosed()
+      .pipe(
+        map(shouldDelete => {
+          if (shouldDelete) {
+            this.notesService.remove(note);
+            if (this.note.id === note.id) {
+              this.note = null;
+            }
+            this.getAllNotes();
+          }
+        })
+      )
+      .subscribe();
   }
 
   private getAllNotes() {

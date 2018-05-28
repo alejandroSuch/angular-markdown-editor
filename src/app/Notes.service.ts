@@ -1,3 +1,4 @@
+import { ConfirmDeleteNoteComponent } from './my-nav/confirm-delete-note/confirm-delete-note.component';
 import { Note } from './Note';
 import { NotesRepository } from './NotesRepository';
 import { Injectable } from '@angular/core';

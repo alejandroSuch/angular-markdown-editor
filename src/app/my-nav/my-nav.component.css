@@ -15,3 +15,12 @@ mat-toolbar {
 .spacer {
   flex: 1;
 }
+
+a.mat-list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+a.mat-list-item span.title {
+  flex: 1;
+}

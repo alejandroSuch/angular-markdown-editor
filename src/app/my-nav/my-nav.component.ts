@@ -13,6 +13,7 @@ export class MyNavComponent {
 
   @Output() onAddNote: EventEmitter<void> = new EventEmitter<void>();
   @Output() onSelectNote: EventEmitter<Note> = new EventEmitter<Note>();
+  @Output() onDeleteNote: EventEmitter<Note> = new EventEmitter<Note>();
 
   constructor() {}
 
@@ -26,5 +27,11 @@ export class MyNavComponent {
 
   selectNote(note: Note): void {
     this.onSelectNote.emit(note);
+  }
+
+  deleteNote(event: Event, note: Note) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.onDeleteNote.emit(note);
   }
 }

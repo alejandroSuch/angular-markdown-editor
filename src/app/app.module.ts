@@ -21,6 +21,8 @@ import { MyNavComponent } from './my-nav/my-nav.component';
 import { EditorComponent } from './dashboard/editor/editor.component';
 import { PreviewComponent } from './dashboard/preview/preview.component';
 import { MarkDown2HTMLPipe } from './dashboard/preview/markdown2html.pipe';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmDeleteNoteComponent } from './confirm-delete-note/confirm-delete-note.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,10 @@ import { MarkDown2HTMLPipe } from './dashboard/preview/markdown2html.pipe';
     MyNavComponent,
     EditorComponent,
     PreviewComponent,
-    MarkDown2HTMLPipe
+    MarkDown2HTMLPipe,
+    ConfirmDeleteNoteComponent
   ],
+  entryComponents: [ConfirmDeleteNoteComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -43,7 +47,8 @@ import { MarkDown2HTMLPipe } from './dashboard/preview/markdown2html.pipe';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

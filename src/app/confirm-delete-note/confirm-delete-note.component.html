@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Eliminar nota</h2>
+
+<mat-dialog-content>
+  <p>¿Realmente deseas eliminar la nota seleccionada?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close(false)">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="dialogRef.close(true)">Aceptar</button>
+</mat-dialog-actions>

@@ -1,2 +1,2 @@
-<kd-nav [notes]="notes" (onAddNote)="addNote()" (onSelectNote)="selectNote($event)"></kd-nav>
+<kd-nav [notes]="notes" (onAddNote)="addNote()" (onSelectNote)="selectNote($event)" (onDeleteNote)="deleteNote($event)"></kd-nav>
 <kd-dashboard [note]="note" (onNoteChanged)="updateNote($event)"></kd-dashboard>

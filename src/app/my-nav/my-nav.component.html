@@ -8,7 +8,12 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#" *ngFor="let note of notes; let i = index" (click)="selectNote(note)">Nota {{ i + 1 }}</a>
+      <a mat-list-item *ngFor="let note of notes; let i = index" href="#" (click)="selectNote(note)">
+        <span class="title">Nota {{ i + 1 }}</span>
+        <button mat-icon-button>
+          <mat-icon aria-label="Add note" (click)="deleteNote($event, note)">delete</mat-icon>
+        </button>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
