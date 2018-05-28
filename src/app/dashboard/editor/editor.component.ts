@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'kd-editor',
@@ -8,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EditorComponent implements OnInit {
   @Input() note: string;
 
+  @Output() onNoteChanged: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit() {}
 
-  noteChanged(value) {}
+  noteChanged(value) {
+    this.onNoteChanged.emit(value);
+  }
 }

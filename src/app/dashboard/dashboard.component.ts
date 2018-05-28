@@ -16,8 +16,6 @@ regards,  Alex
 
   `;
 
-  parsedNote: string;
-
   ngOnInit() {
     const storedValue = localStorage.getItem('note');
 
