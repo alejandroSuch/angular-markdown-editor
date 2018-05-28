@@ -20,9 +20,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { EditorComponent } from './dashboard/editor/editor.component';
 import { PreviewComponent } from './dashboard/preview/preview.component';
+import { MarkDown2HTMLPipe } from './dashboard/preview/markdown2html.pipe';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, MyNavComponent, EditorComponent, PreviewComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    MyNavComponent,
+    EditorComponent,
+    PreviewComponent,
+    MarkDown2HTMLPipe
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

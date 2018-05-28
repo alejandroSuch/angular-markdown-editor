@@ -1,5 +1,5 @@
 <mat-card class="dashboard-card">
   <mat-card-content class="dashboard-card-content">
-    <div class="parsedText" [innerHTML]="parsedNote"></div>
+    <div class="parsedText" [innerHTML]="note | markdown2HTML"></div>
   </mat-card-content>
 </mat-card>

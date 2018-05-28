@@ -4,7 +4,7 @@
       <kd-editor [note]="note" (onNoteChanged)="noteChanged($event)"></kd-editor>
     </mat-grid-tile>
     <mat-grid-tile colspan="1" rowspan="1">
-      <kd-preview [note]="note"></kd-preview>
+      <kd-preview [note]="note.value"></kd-preview>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
