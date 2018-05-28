@@ -18,9 +18,11 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyNavComponent } from './my-nav/my-nav.component';
+import { EditorComponent } from './dashboard/editor/editor.component';
+import { PreviewComponent } from './dashboard/preview/preview.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, MyNavComponent],
+  declarations: [AppComponent, DashboardComponent, MyNavComponent, EditorComponent, PreviewComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

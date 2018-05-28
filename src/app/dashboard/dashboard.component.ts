@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import parseMarkdown from 'parse-markdown-js';
-
 @Component({
   selector: 'my-dashboard',
   templateUrl: './dashboard.component.html',
@@ -26,17 +24,10 @@ regards,  Alex
     if (storedValue) {
       this.note = storedValue;
     }
-
-    this.parse();
   }
 
   noteChanged(value) {
     this.note = value;
     localStorage.setItem('note', this.note);
-    this.parse();
-  }
-
-  parse() {
-    this.parsedNote = parseMarkdown(this.note);
   }
 }
