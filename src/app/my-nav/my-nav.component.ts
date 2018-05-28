@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'my-nav',
+  selector: 'kd-nav',
   templateUrl: './my-nav.component.html',
   styleUrls: ['./my-nav.component.css']
 })
