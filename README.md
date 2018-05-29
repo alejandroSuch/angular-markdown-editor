@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
+## Want to see it in action? Have Docker
+
+```
+docker run -it --rm -p 9090:80 alexsuch/markdown-editor:1.0.1
+```
+
+Now open http://localhost:9090/ in your favorite browser.
+
+https://hub.docker.com/r/alexsuch/markdown-editor/
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
