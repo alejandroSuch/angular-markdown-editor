@@ -9,7 +9,8 @@
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item *ngFor="let note of notes; let i = index" href="#" (click)="selectNote(note)">
-        <span class="title">Nota {{ i + 1 }}</span>
+        <h4 class="title" mat-line>{{ note.title }}</h4>
+        <p mat-line> {{ note.lastUpdated | date:'dd/MM/yyyy' }} </p>
         <button mat-icon-button>
           <mat-icon aria-label="Add note" (click)="deleteNote($event, note)">delete</mat-icon>
         </button>

@@ -47,8 +47,25 @@ export class DashboardComponent implements OnChanges {
   noteChanged(value) {
     this.note = Note.builder()
       .id(this.note.id)
+      .title(this.note.title)
       .value(value)
+      .dateCreated(this.note.dateCreated)
+      .lastUpdated(new Date())
       .build();
+
+    this.onNoteChanged.emit(this.note);
+  }
+
+  titleChanged(title) {
+    this.note = Note.builder()
+      .id(this.note.id)
+      .title(title)
+      .value(this.note.value)
+      .dateCreated(this.note.dateCreated)
+      .lastUpdated(new Date())
+      .build();
+
+    console.log('change!', this.note);
 
     this.onNoteChanged.emit(this.note);
   }

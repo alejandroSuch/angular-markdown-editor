@@ -1,5 +1,11 @@
 <mat-card class="dashboard-card">
-  <mat-card-content class="dashboard-card-content">
-    <textarea *ngIf="note" (input)="noteChanged(ta.value)" #ta>{{ note.value }}</textarea>
+  <mat-card-header>
+    <mat-form-field *ngIf="note">
+      <input matInput placeholder="Título" [value]="note.title" #title (input)="titleChanged(title.value)">
+    </mat-form-field>
+  </mat-card-header>
+
+  <mat-card-content class=" dashboard-card-content ">
+    <textarea *ngIf="note" (input)="noteChanged(ta.value) " #ta>{{ note.value }}</textarea>
   </mat-card-content>
 </mat-card>

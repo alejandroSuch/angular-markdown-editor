@@ -10,15 +10,20 @@ export class NotesRepository {
   constructor() {}
 
   private findById(noteId: string): Note {
-    const value = localStorage.getItem(noteId);
+    const item = localStorage.getItem(noteId);
 
-    if (value === null) {
+    if (item === null) {
       throw new Error('Note not found');
     }
 
+    const json = JSON.parse(item);
+
     return Note.builder()
-      .id(noteId)
-      .value(value)
+      .id(json.id)
+      .title(json.title)
+      .value(json.value)
+      .dateCreated(new Date(json.dateCreated))
+      .lastUpdated(new Date(json.lastUpdated))
       .build();
   }
 
@@ -28,12 +33,10 @@ export class NotesRepository {
 
   save(note: Note): void {
     const ids = this.getAllNoteIds();
-    const { id, value } = note;
+    localStorage.setItem(note.id, note.toString());
 
-    localStorage.setItem(id, value);
-
-    if (!ids.includes(id)) {
-      this.saveAllNoteIds([...ids, id]);
+    if (!ids.includes(note.id)) {
+      this.saveAllNoteIds([...ids, note.id]);
     }
   }
 

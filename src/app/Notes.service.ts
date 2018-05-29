@@ -1,4 +1,3 @@
-import { ConfirmDeleteNoteComponent } from './my-nav/confirm-delete-note/confirm-delete-note.component';
 import { Note } from './Note';
 import { NotesRepository } from './NotesRepository';
 import { Injectable } from '@angular/core';
@@ -14,12 +13,9 @@ export class NotesService {
 
   getAllNotes(): Note[] {
     if (!this.initialized) {
-      console.log('initializing...');
       this.initialized = true;
       this.notes = this.notesRepository.findAll();
     }
-
-    console.log('notes are', this.notes);
 
     return this.notes;
   }
@@ -30,7 +26,12 @@ export class NotesService {
 
   save(note: Note): void {
     this.notesRepository.save(note);
-    this.notes = [...this.notes, note];
+
+    if (!this.notes.some((it: Note) => it.id === note.id)) {
+      this.notes = [...this.notes, note];
+    } else {
+      this.notes = this.notes.map((it: Note) => (it.id === note.id ? note : it));
+    }
   }
 
   remove(note: Note) {

@@ -35,6 +35,8 @@ export class AppComponent implements OnInit {
 
   updateNote(note: Note) {
     this.notesService.save(note);
+    this.note = note;
+    this.getAllNotes();
   }
 
   deleteNote(note: Note) {
@@ -46,7 +48,7 @@ export class AppComponent implements OnInit {
         map(shouldDelete => {
           if (shouldDelete) {
             this.notesService.remove(note);
-            if (this.note.id === note.id) {
+            if (this.note && this.note.id === note.id) {
               this.note = null;
             }
             this.getAllNotes();
