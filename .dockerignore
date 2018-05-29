@@ -1,0 +1,10 @@
+dist
+node_modules
+e2e
+src/**/*.spec.ts
+Dockerfile
+docker-compose.yml
+.dockerignore
+.editorconfig
+build.sh
+README.md

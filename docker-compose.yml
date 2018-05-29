@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  markdown-editor:
+    image: alexsuch/markdown-editor:$TAG
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
