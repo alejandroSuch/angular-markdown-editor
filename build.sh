@@ -6,5 +6,4 @@ if [ $# -eq 0 ]
     exit 1;
 fi
 
-export TAG=$1
-docker-compose -f ./docker-compose.yml build
+TAG=$1 docker-compose -f ./docker-compose.yml build
