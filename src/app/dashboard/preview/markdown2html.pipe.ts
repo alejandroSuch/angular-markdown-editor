@@ -1,6 +1,6 @@
-import { Pipe, PipeTransform } from '@angular/core';
 import parseMarkdown from 'parse-markdown-js';
 import { Note } from '../../Note';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'markdown2HTML'

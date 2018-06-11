@@ -1,3 +1,3 @@
-<kd-nav [notes]="notes" (onAddNote)="addNote()" (onSelectNote)="selectNote($event)" (onDeleteNote)="deleteNote($event)" (onToggleMode)="toggleMode($event)">
-  <kd-dashboard [note]="note" [mode]="mode" (onNoteChanged)="updateNote($event)"></kd-dashboard>
+<kd-nav [notes]="notes$ | async" (onAddNote)="addNote()" (onSelectNote)="selectNote($event)" (onDeleteNote)="deleteNote($event)" (onToggleMode)="toggleMode($event)">
+  <kd-dashboard [note]="note$ | async" [mode]="mode$ | async" (onNoteChanged)="updateNote($event)"></kd-dashboard>
 </kd-nav>

@@ -9,7 +9,7 @@ const ALL_NOTE_IDS = 'allNoteIds';
 export class NotesRepository {
   constructor() {}
 
-  private findById(noteId: string): Note {
+  public findById(noteId: string): Note {
     const item = localStorage.getItem(noteId);
 
     if (item === null) {

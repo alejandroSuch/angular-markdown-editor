@@ -1,12 +1,14 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { DashboardMode } from './../dashboard/DashboardMode';
 import { map } from 'rxjs/operators';
 import { Note } from '../Note';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'kd-nav',
   templateUrl: './my-nav.component.html',
-  styleUrls: ['./my-nav.component.css']
+  styleUrls: ['./my-nav.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MyNavComponent {
   @Input() notes: Note[];
@@ -34,6 +36,18 @@ export class MyNavComponent {
     event.preventDefault();
     event.stopPropagation();
     this.onDeleteNote.emit(note);
+  }
+
+  togleBothMode() {
+    this.toggleMode(DashboardMode.EDITOR_AND_PREVIEW);
+  }
+
+  toggleEditorMode() {
+    this.toggleMode(DashboardMode.EDITOR);
+  }
+
+  togglePreviewMode() {
+    this.toggleMode(DashboardMode.PREVIEW);
   }
 
   toggleMode(mode) {

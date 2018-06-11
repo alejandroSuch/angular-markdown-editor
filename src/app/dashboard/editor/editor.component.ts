@@ -1,20 +1,19 @@
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Note } from '../../Note';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'kd-editor',
   templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.css']
+  styleUrls: ['./editor.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EditorComponent implements OnInit {
-  @Input() note: string;
+export class EditorComponent {
+  @Input() note: Note;
 
   @Output() onNoteChanged: EventEmitter<string> = new EventEmitter<string>();
   @Output() onTitleChanged: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
-
-  ngOnInit() {}
 
   titleChanged(value) {
     this.onTitleChanged.emit(value);
