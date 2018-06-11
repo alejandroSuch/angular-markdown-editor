@@ -3,11 +3,11 @@ import { DashboardModeActionTypes, ModeActions } from '../actions/mode.actions';
 
 const initialState = DashboardMode.EDITOR_AND_PREVIEW;
 
-export const reducer = (state = initialState, action: ModeActions) => {
+export function reducer(state = initialState, action: ModeActions) {
   switch (action.type) {
     case DashboardModeActionTypes.SET_MODE:
       return action.payload;
     default:
       return initialState;
   }
-};
+}

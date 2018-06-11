@@ -10,7 +10,7 @@ import { Note } from '../../../Note';
 
 const initialState: Note = null;
 
-export const reducer = (state = initialState, action: SelectedNoteActions) => {
+export function reducer(state = initialState, action: SelectedNoteActions) {
   switch (action.type) {
     case SelectedNoteActionTypes.NEW_SUCCESS:
       return (<NewSuccessAction>action).payload.clone();
@@ -25,4 +25,4 @@ export const reducer = (state = initialState, action: SelectedNoteActions) => {
     default:
       return state;
   }
-};
+}

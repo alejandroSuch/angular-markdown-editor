@@ -11,7 +11,7 @@ import { Note } from '../../../Note';
 
 const initialState: Note[] = [];
 
-export const reducer = (state = initialState, action: AllNotesActions | SelectedNoteActions) => {
+export function reducer(state = initialState, action: AllNotesActions | SelectedNoteActions) {
   switch (action.type) {
     case AllNotesActionTypes.LOAD_ALL_SUCCESS:
       return (<LoadAllSuccessAction>action).payload;
@@ -27,4 +27,4 @@ export const reducer = (state = initialState, action: AllNotesActions | Selected
     default:
       return state;
   }
-};
+}
