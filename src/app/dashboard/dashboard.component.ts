@@ -9,7 +9,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { DashboardMode } from './DashboardMode';
-import { Note } from '../Note';
+import { Note } from '../domain/Note';
 
 @Component({
   selector: 'kd-dashboard',

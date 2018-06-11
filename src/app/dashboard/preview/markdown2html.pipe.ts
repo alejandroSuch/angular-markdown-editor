@@ -1,5 +1,5 @@
 import parseMarkdown from 'parse-markdown-js';
-import { Note } from '../../Note';
+import { Note } from '../../domain/Note';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

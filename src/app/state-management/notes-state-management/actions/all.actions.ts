@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Note } from '../../../Note';
+import { Note } from '../../../domain/Note';
 
 export enum AllNotesActionTypes {
   LOAD_ALL = '[All Notes] Load all',

@@ -12,7 +12,7 @@ import {
 import { LoadAllAction } from './state-management/notes-state-management/actions/all.actions';
 import { map } from 'rxjs/operators';
 import { MatDialog, MatDialogRef } from '@angular/material';
-import { Note } from './Note';
+import { Note } from './domain/Note';
 import { Observable } from 'rxjs';
 import { SetModeAction } from './state-management/dashboard-state-management/actions/mode.actions';
 import { Store } from '@ngrx/store';

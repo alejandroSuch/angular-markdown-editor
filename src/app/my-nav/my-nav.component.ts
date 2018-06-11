@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { DashboardMode } from './../dashboard/DashboardMode';
 import { map } from 'rxjs/operators';
-import { Note } from '../Note';
+import { Note } from '../domain/Note';
 import { Observable } from 'rxjs';
 
 @Component({

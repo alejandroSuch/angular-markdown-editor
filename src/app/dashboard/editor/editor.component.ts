@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Note } from '../../Note';
+import { Note } from '../../domain/Note';
 
 @Component({
   selector: 'kd-editor',

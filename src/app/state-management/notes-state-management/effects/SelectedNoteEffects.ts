@@ -17,8 +17,8 @@ import {
   UpdateSuccessAction
 } from '../actions/selected.actions';
 import { Injectable } from '@angular/core';
-import { Note } from '../../../Note';
-import { NotesRepository } from '../../../NotesRepository';
+import { Note } from '../../../domain/Note';
+import { NotesRepository } from '../../../domain/NotesRepository';
 import { of, timer } from 'rxjs';
 
 @Injectable()

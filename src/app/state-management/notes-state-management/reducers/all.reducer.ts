@@ -7,7 +7,7 @@ import {
   SelectedNoteActionTypes,
   UpdateSuccessAction
 } from './../actions/selected.actions';
-import { Note } from '../../../Note';
+import { Note } from '../../../domain/Note';
 
 const initialState: Note[] = [];
 

@@ -1,7 +1,7 @@
 import * as fromAll from './all.reducer';
 import * as fromSelected from './selected.reducer';
 import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
-import { Note } from '../../../Note';
+import { Note } from '../../../domain/Note';
 
 export interface State {
   all: Note[];

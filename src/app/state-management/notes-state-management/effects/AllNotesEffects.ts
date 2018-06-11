@@ -3,8 +3,8 @@ import { AllNotesActionTypes, LoadAllAction, LoadAllErrorAction, LoadAllSuccessA
 import { catchError, map, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { NewSuccessAction, SelectedNoteActionTypes } from '../actions/selected.actions';
-import { Note } from '../../../Note';
-import { NotesRepository } from '../../../NotesRepository';
+import { Note } from '../../../domain/Note';
+import { NotesRepository } from '../../../domain/NotesRepository';
 import { of } from 'rxjs';
 
 @Injectable()

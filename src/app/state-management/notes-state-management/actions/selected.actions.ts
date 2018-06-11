@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Note } from '../../../Note';
+import { Note } from '../../../domain/Note';
 
 export enum SelectedNoteActionTypes {
   NEW = '[Selected Note] New',
