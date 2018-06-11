@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 @NgModule({
   imports: [
     StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
     NotesStateManagementModule,
     DashboardStateManagementModule
